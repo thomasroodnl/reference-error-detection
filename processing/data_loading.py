@@ -45,7 +45,7 @@ def get_data_by_annotations(data: pd.DataFrame, annotation_types: list):
     return data[list(map(lambda x: set(annotation_types) <= set(x), flattened_annotations))]
 
 
-def get_data_by_index(data: pd.Dataframe, index: int):
+def get_data_by_index(data: pd.DataFrame, index: int):
     """
     Get a data point based on index
     :param data: Data set
