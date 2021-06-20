@@ -14,7 +14,8 @@ def error_detection():
     core_nlp = CoreNLPWrapper(annotators=['tokenize, ssplit, truecase, pos, lemma, ner, depparse, openie, coref, parse'])
     with core_nlp.get_instance() as client:
         error_detect = ErrorDetection(client)
-        return error_detect.run_all_detectors_entry(data, log_level=1)
+        # NOTE: Here we only run on 1 entry, in this case the example text/summary pair used in the paper
+        return error_detect.run_all_detectors_entry(data.loc[657], log_level=1)
 
 
 if __name__ == "__main__":
